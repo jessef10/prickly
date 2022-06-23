@@ -26,10 +26,10 @@
         height: 56px;
         position: relative;
         overflow: hidden;
-        @include media('<tablet') {
+        @include media('<=tablet') {
           height: 48px;
         }
-        @include media('<phone') {
+        @include media('<=phone') {
           height: 32px;
         }
         span {
