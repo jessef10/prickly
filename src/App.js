@@ -1,69 +1,84 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import gsap from "gsap";
 import "./styles/App.scss";
+
+// Components
 import Header from "./components/header.js";
-import Banner from "./components/banner.js";
-import Cases from "./components/cases.js";
-import IntroOverlay from "./components/introOverlay.js"
+import Navigation from "./components/navigation.js"
+
+// Pages
+import Home from "./pages/home.js";
+import CaseStudies from "./pages/caseStudies.js";
+import Approach from "./pages/approach.js";
+import Services from "./pages/services.js";
+import About from "./pages/about.js"
+
+// Routes
+
+const routes = [
+  { path: "/", name: "Home", Component: Home },
+  { path: "/case-studies", name: "Case Studies", Component: CaseStudies },
+  { path: "/approach", name: "Approach", Component: Approach },
+  { path: "/services", name: "Services", Component: Services },
+  { path: "/about-us", name: "About Us", Component: About }
+];
+
+function debounce(fn, ms) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
 
 function App() {
+  // prevent flashing
+  gsap.to("body", 0, {
+    css: { visibility: "visible" }
+  });
+
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerHeight
+  });
+
   useEffect(() => {
-    let vh = window.innerHeight * 0.01;
+    // Grab inner height of window for mobile screens when dealing with vh
+    let vh = dimensions.height * 0.01;
     // Set css viriable vh
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-    // prevent flashing
-    gsap.to("body", 0, {
-      css: { visibility: "visible" }
-    });
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      });
+    }, 1000);
 
-    // On load timeline
-    const tl = gsap.timeline();
+    window.addEventListener("resize", debouncedHandleResize);
 
-    tl.fromTo(".line span", {y: 100, delay: 1, skewY: 7}, {
-      duration: 1.8,
-      y: 0,
-      ease: "power4.out",
-      skewY: 0,
-      stagger: {
-        amount: 0.3
-      }
-    }).to(".overlay-top", {
-      duration: 1.6,
-      height: 0,
-      ease: "expo.inOut",
-      stagger: {
-        amount: 0.4
-      }
-    }).to(".overlay-bottom", {
-      duration: 1.6,
-      width: 0,
-      ease: "expo.inOut",
-      delay: -0.8,
-      stagger: {
-        amount: 0.4
-      }
-    }).to(".intro-overlay", {
-      duration: 0,
-      css: { display: "none" }
-    }).from(".case-image img", {
-      duration: 1.6,
-      scale: 1.4,
-      ease: "expo.inOut",
-      delay: -2,
-      stagger: {
-        amount: 0.4
-      }
-    });
-  }, []);
+    return () => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  });
 
   return (
-    <div className='App'>
-      <IntroOverlay />
+    <>
       <Header />
-      <Banner />
-      <Cases />
-    </div>
+      <div className="App">
+        <Routes>
+          {routes.map(({path, Component}) => {
+            return <Route key={path} exact path={path} element={<Component />} />
+          })}
+
+        </Routes>
+      </div>
+      <Navigation />
+    </>
   );
 }
 
