@@ -12,18 +12,13 @@ const Navigation = () => {
             </div>
             <ul className="nav-links">
               <li>
-                <NavLink to="/approach">
-                  Approach
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/services">
-                  Services
+                  Plants
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/about-us">
-                  About us
+                  Our Story
                 </NavLink>
               </li>
             </ul>
@@ -35,27 +30,16 @@ const Navigation = () => {
             <div className="nav-infos">
               <ul className="nav-info">
                 <li className="nav-info-label">
-                  Email
+                  Phone
                 </li>
                 <li>
-                  <NavLink to="/contact">
-                    Get in touch with us
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/audit">
-                    Get a free audit
-                  </NavLink>
+                  123-456-789
                 </li>
               </ul>
               <ul className="nav-info">
                 <li className="nav-info-label">Location</li>
                 <li>123 Street Ln</li>
                 <li>City, State</li>
-              </ul>
-              <ul className="nav-info">
-                <li className="nav-info-label">Something</li>
-                <li>Something</li>
               </ul>
             </div>
           </div>
