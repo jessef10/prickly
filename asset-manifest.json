@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/prickly/static/css/main.2f27beda.css",
+    "main.js": "/prickly/static/js/main.5675fe76.js",
+    "static/media/outdoor.jpg": "/prickly/static/media/outdoor.319d22789be2d632c859.jpg",
+    "static/media/plant-nursery.jpg": "/prickly/static/media/plant-nursery.0929efd46b01cbde0978.jpg",
+    "static/media/big-plants.jpg": "/prickly/static/media/big-plants.c38be910322860f9b418.jpg",
+    "static/media/medium-plant.jpg": "/prickly/static/media/medium-plant.ffa30de2435c82e861a1.jpg",
+    "static/media/small-plant.jpg": "/prickly/static/media/small-plant.fff6a08bb7658110ea24.jpg",
+    "static/media/space.jpg": "/prickly/static/media/space.7f7c7f8aa1655223303c.jpg",
+    "static/media/large-plant.jpg": "/prickly/static/media/large-plant.a7e0997f32e3012eeadf.jpg",
+    "static/media/home.jpg": "/prickly/static/media/home.33847caa33530e28f68f.jpg",
+    "index.html": "/prickly/index.html",
+    "static/media/arrow-up-circle.svg": "/prickly/static/media/arrow-up-circle.5bedee1373e758ae03b2088175cf395d.svg",
+    "static/media/arrow-right.svg": "/prickly/static/media/arrow-right.73edd4dd8f4e9309e08b13737573ed38.svg",
+    "main.2f27beda.css.map": "/prickly/static/css/main.2f27beda.css.map",
+    "main.5675fe76.js.map": "/prickly/static/js/main.5675fe76.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f27beda.css",
+    "static/js/main.5675fe76.js"
+  ]
+}
