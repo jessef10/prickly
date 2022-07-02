@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
+import { NavLink } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -15,10 +16,10 @@ const Banner = () => {
             </div>
           </h2>
           <div className="btn-row">
-            <a href="/">
+            <NavLink to="/about-us">
               More About us
               <RightArrow />
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

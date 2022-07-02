@@ -9,18 +9,14 @@ import Navigation from "./components/navigation.js"
 
 // Pages
 import Home from "./pages/home.js";
-import CaseStudies from "./pages/caseStudies.js";
-import Approach from "./pages/approach.js";
-import Services from "./pages/services.js";
+import Plants from "./pages/plants.js";
 import About from "./pages/about.js"
 
 // Routes
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
-  { path: "/case-studies", name: "Case Studies", Component: CaseStudies },
-  { path: "/approach", name: "Approach", Component: Approach },
-  { path: "/services", name: "Services", Component: Services },
+  { path: "/plants", name: "Plants", Component: Plants },
   { path: "/about-us", name: "About Us", Component: About }
 ];
 
