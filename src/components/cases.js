@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const caseStudies = [
   {
@@ -28,6 +29,7 @@ const Cases = () => {
   return (
     <section className="cases">
       <div className="container-fluid">
+      <Link to="/plants">
         <div className="row">
           {caseStudies.map(caseItem => (
             <div className="case" key={caseItem.id}>
@@ -44,6 +46,7 @@ const Cases = () => {
             </div>
           ))}
         </div>
+      </Link>
       </div>
     </section>
   );
